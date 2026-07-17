@@ -11,7 +11,7 @@
     if(box3d||box3dLoading)return;
     box3dLoading=true;
     var s=document.createElement('script');
-    s.src='https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/vendor/three.min.js';
+    s.src='https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/vendor/three.min.js';
     s.onload=function(){ try{ box3d=buildBox3d(document.getElementById('box3d')); if(modal.classList.contains('show'))box3d.play();
       // pre-build the delivery scene now (off the transition) so submit doesn't freeze
       if(!deliv)deliv=buildDelivery3d(document.getElementById('deliv3d')); }catch(e){} };
@@ -38,7 +38,7 @@
     var L=2.9,Hh=0.98,D=0.82;
     var geo=new THREE.BoxGeometry(L,Hh,D,1,1,1);
     // BoxGeometry face order: +x,-x,+y,-y,+z,-z
-    var box=new THREE.Mesh(geo,[teal,teal,mapMat('https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/tex/box-top.jpg'),white,mapMat('https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/tex/box-front.jpg'),mapMat('https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/tex/box-back.jpg')]);
+    var box=new THREE.Mesh(geo,[teal,teal,mapMat('https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/tex/box-top.jpg'),white,mapMat('https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/tex/box-front.jpg'),mapMat('https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/tex/box-back.jpg')]);
     box.rotation.set(-0.3,-0.6,0.05);
     scene.add(box);
     var raf=null,last=0;
@@ -75,7 +75,7 @@
       t.needsUpdate=true;
     }
     draw(null);
-    var img=new Image();img.crossOrigin='anonymous';img.onload=function(){draw(img);};img.onerror=function(){};img.src='https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/tex/np-logo-white.png';
+    var img=new Image();img.crossOrigin='anonymous';img.onload=function(){draw(img);};img.onerror=function(){};img.src='https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/tex/np-logo-white.png';
     return t;
   }
   function buildDelivery3d(el){
@@ -95,7 +95,7 @@
     var pteal=new THREE.MeshStandardMaterial({color:0x0e8f80,roughness:0.5});
     var pwhite=new THREE.MeshStandardMaterial({color:0xeef4f2,roughness:0.7});
     var stage=new THREE.Group();scene.add(stage);   // parent for the "shipped away" drive-off
-    var prod=new THREE.Mesh(new THREE.BoxGeometry(1.5,0.5,0.44),[pteal,pteal,mm('https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/tex/box-top.jpg'),pwhite,mm('https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/tex/box-front.jpg'),mm('https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/tex/box-back.jpg')]);
+    var prod=new THREE.Mesh(new THREE.BoxGeometry(1.5,0.5,0.44),[pteal,pteal,mm('https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/tex/box-top.jpg'),pwhite,mm('https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/tex/box-front.jpg'),mm('https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/tex/box-back.jpg')]);
     prod.position.set(0,2.4,0);stage.add(prod);
     var kraft=new THREE.MeshStandardMaterial({color:0xc99a63,roughness:0.95});   // kraft cardboard
     var kraftIn=new THREE.MeshStandardMaterial({color:0x9c7443,roughness:1.0});
@@ -247,13 +247,13 @@
 
   // before/after case switcher (slider cases + plain photo cases)
   var CASES=[
-    {type:'slider',before:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/img/ba-w-before.jpg',after:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/img/ba-w-after.jpg',name:'Ірина, 52 роки',ini:'І',quote:'«Пішли набряки та важкість. Вперше за довгий час почуваюся легкою та впевненою в собі.»',result:'−24 кг',weeks:'16 тижнів'},
-    {type:'slider',before:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/img/ba-m-before.jpg',after:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/img/ba-m-after.jpg',name:'Олександр, 34 роки',ini:'О',quote:'«Пішов живіт, повернувся рельєф. Без виснажливих дієт — лише схема та супровід лікаря.»',result:'−18 кг',weeks:'12 тижнів'},
-    {type:'photo',img:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/img/res-1.jpg'},
-    {type:'photo',img:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/img/res-2.jpg'},
-    {type:'photo',img:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/img/res-3.jpg'},
-    {type:'photo',img:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/img/res-4.jpg'},
-    {type:'photo',img:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v1/assets/img/res-5.jpg'}
+    {type:'slider',before:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/img/ba-w-before.jpg',after:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/img/ba-w-after.jpg',name:'Ірина, 52 роки',ini:'І',quote:'«Пішли набряки та важкість. Вперше за довгий час почуваюся легкою та впевненою в собі.»',result:'−24 кг',weeks:'16 тижнів'},
+    {type:'slider',before:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/img/ba-m-before.jpg',after:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/img/ba-m-after.jpg',name:'Олександр, 34 роки',ini:'О',quote:'«Пішов живіт, повернувся рельєф. Без виснажливих дієт — лише схема та супровід лікаря.»',result:'−18 кг',weeks:'12 тижнів'},
+    {type:'photo',img:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/img/res-1.jpg'},
+    {type:'photo',img:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/img/res-2.jpg'},
+    {type:'photo',img:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/img/res-3.jpg'},
+    {type:'photo',img:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/img/res-4.jpg'},
+    {type:'photo',img:'https://cdn.jsdelivr.net/gh/alexeysukhariev/terzapower-assets@v2/assets/img/res-5.jpg'}
   ];
   var baBefore=document.getElementById('baBefore'),baAfter=document.getElementById('baAfter'),
       effDetail=document.getElementById('effDetail'),effGeneric=document.getElementById('effGeneric');
@@ -302,6 +302,8 @@
     var data={first:form.elements.first.value.trim(),last:form.elements.last.value.trim(),phone:form.elements.phone.value.trim(),city:form.elements.city.value.trim(),branch:form.elements.branch.value.trim(),website:(form.elements.website&&form.elements.website.value)||'',source:(form.elements.source&&form.elements.source.value)||'',product:'TerzaPower 20mg',ts:new Date().toISOString()};
     // send the lead to the Telegram group via the Vercel proxy (token stays server-side)
     try{fetch('https://terzapower-landing.vercel.app/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),keepalive:true}).catch(function(){});}catch(e){}
+    // conversion event -> attributes to whichever Meta Pixel is on THIS page (Lidgen/Arsen)
+    try{if(window.fbq)fbq('track','Lead');}catch(e){}
     console.log('LEAD',data);
     // smooth transition: collapse header + fade form out together, then fade success in
     modal.classList.add('sent');
